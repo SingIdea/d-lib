@@ -4,14 +4,15 @@
   "description": "The DID Library",
   "main": "./dist/index.js",
   "scripts": {
+    "preinstall:local": "git config --global url.\"https://\".insteadOf git://\"",
     "install:dev": "yarn install && yarn link",
-    "build": "doppler run --command \"node --trace-warnings scripts/build.js noserve\"",
-    "start": "doppler run node scripts/build.js serve",
-    "start:debug": "doppler run node --inspect-brk scripts/build.js serve",
-    "test": "doppler run node scripts/test.js",
-    "test:contracts": "doppler run node scripts/test-contracts.js",
-    "test:env": "doppler run node scripts/test-env.js",
-    "test:mocha": "doppler run node scripts/helpers/runMocha.js"
+    "build": "doppler run --command \"node --openssl-legacy-provider --trace-warnings scripts/build.js noserve\"",
+    "start": "doppler run --command \"node --openssl-legacy-provider scripts/build.js serve\"",
+    "start:debug": "doppler run --command \"node --openssl-legacy-provider --inspect-brk scripts/build.js serve\"",
+    "test": "doppler run --command \"node --openssl-legacy-provider scripts/test.js\"",
+    "test:contracts": "doppler run --command \"node --openssl-legacy-provider scripts/test-contracts.js\"",
+    "test:env": "doppler run --command \"node --openssl-legacy-provider scripts/test-env.js\"",
+    "test:mocha": "doppler run --command \"node --openssl-legacy-provider scripts/helpers/runMocha.js\""
   },
   "files": [
     "dist"

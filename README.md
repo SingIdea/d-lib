@@ -18,7 +18,7 @@ yarn add @d-protocol/d-lib
 
 `yarn build` will generate this file and save it to `dist/d-lib.js`
 
-Local development
+### Local development
 
 1. Clone this repo.
 
@@ -52,7 +52,7 @@ Full test suite can be run with:
 yarn run test
 ```
 
-Note: you should not have the server running at this time, as these tests start their own local blockchain instance.
+Note: you should not have the Ganache server running at this time, as these tests start their own local blockchain instance.
 
 ### Command Line (Only Solidity Tests)
 
